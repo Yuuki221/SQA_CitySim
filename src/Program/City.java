@@ -1,13 +1,12 @@
+package Program;
+
 import java.util.Random;
 
 public class City {
-	static String[] PLACES = {"The Cathedral of Learning", "Squirrel Hill", "Downtown", "The Point"};
+	public static String[] PLACES = {"The Cathedral of Learning", "Squirrel Hill", "Downtown", "The Point"};
 	int seed;
-	public City(){
-		// this.seed = seed;
-	}
 	// method for generate a random number between 1 and 100
-	private int getRandom(){
+	private int getRandom(int seed){
 		Random r = new Random();
 		int Low = 1;
 		int High = 100;
@@ -15,13 +14,13 @@ public class City {
 		return Result;
 	}
 	// method for random direction
-	public String getCity(){
-		int randRes = getRandom();
+	public String getCity(int seed){
+		int randRes = getRandom(seed);
 		if(randRes<=25){
 			return PLACES[0];
-		}else if(randRes<=50){
+		}else if(randRes<=50 && randRes>25){
 			return PLACES[1];
-		}else if(randRes<=75){
+		}else if(randRes<=75 && randRes>50){
 			return PLACES[2];
 		}else{
 			return PLACES[3];
@@ -29,8 +28,8 @@ public class City {
 	}
 	
 	// method for leave or stay for one city
-	public boolean leftCity(){
-		int randRes = getRandom();
+	public boolean leftCity(int seed){
+		int randRes = getRandom(seed);
 		if(randRes<=50){
 			return true;
 		}else{

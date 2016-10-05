@@ -1,3 +1,5 @@
+package Program;
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -10,7 +12,7 @@ import java.util.Set;
 */
 
 public class Visitor {
-	Map<String, String[]> likeMap;
+	public Map<String, String[]> likeMap;
 	String cate;
 	int visitorIdx;
 	public Visitor(int visitorIdx){

@@ -1,3 +1,5 @@
+package Program;
+
 import java.util.Scanner;
 
 public class CityDriver {
@@ -13,8 +15,8 @@ public class CityDriver {
 			Visitor newVisitor = new Visitor(i);
 			while(!left){
 			City city = new City();
-			String cityName = city.getCity();
-			left = visitTime==1? false : city.leftCity();
+			String cityName = city.getCity(seed);
+			left = visitTime==1? false : city.leftCity(seed);
 			newVisitor.introWord();
 			city.placesInfoWord(i, cityName);
 			newVisitor.judgeWord(cityName);
